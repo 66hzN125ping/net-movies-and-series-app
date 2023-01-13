@@ -1,3 +1,4 @@
+using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -24,6 +25,8 @@ namespace Aspnet_Core_Movie
             services.AddRazorPages();
             services.AddDbContext<AuthDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AuthConnectionString")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
+
+            services.AddDbContext<MovieContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
 
             services.ConfigureApplicationCookie(config =>
             {
@@ -57,6 +60,9 @@ namespace Aspnet_Core_Movie
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Pages}/{action=Index}/{id?}");
             });
         }
     }

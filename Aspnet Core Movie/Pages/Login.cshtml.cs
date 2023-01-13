@@ -30,7 +30,7 @@ namespace Aspnet_Core_Movie.Pages
                 }
             }
 
-            ModelState.AddModelError("", "Incorrect credentials");
+            ModelState.AddModelError("", "Incorrect Username and Password!");
             return Page();
         }
     }

@@ -1,25 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Aspnet_Core_Movie.Infrastructure;
+using Aspnet_Core_Movie.Models;
 
 namespace Aspnet_Core_Movie.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        private readonly Aspnet_Core_Movie.Infrastructure.MovieContext _context;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(Aspnet_Core_Movie.Infrastructure.MovieContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public void OnGet()
-        {
+        public IList<MovieList> MovieList { get;set; }
 
+        public async Task OnGetAsync()
+        {
+            MovieList = await _context.MovieList.ToListAsync();
         }
     }
 }
