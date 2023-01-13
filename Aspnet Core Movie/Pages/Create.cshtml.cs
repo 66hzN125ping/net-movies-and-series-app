@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Aspnet_Core_Movie.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class CreateModel : PageModel
     {
+        
         private readonly Aspnet_Core_Movie.Infrastructure.MovieContext _context;
 
         public CreateModel(Aspnet_Core_Movie.Infrastructure.MovieContext context)
@@ -27,7 +30,6 @@ namespace Aspnet_Core_Movie.Controllers
         [BindProperty]
         public MovieList MovieList { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
