@@ -1,5 +1,5 @@
 ﻿@page
-@model Aspnet_Core_Movie.Pages.CreateModel
+@model Aspnet_Core_Movie.Controllers.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -20,14 +20,29 @@
                 <span asp-validation-for="MovieList.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="MovieList.ImgUrl" class="control-label"></label>
+                <input asp-for="MovieList.ImgUrl" class="form-control" />
+                <span asp-validation-for="MovieList.ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="MovieList.Rating" class="control-label"></label>
                 <input asp-for="MovieList.Rating" class="form-control" />
                 <span asp-validation-for="MovieList.Rating" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="MovieList.Plot" class="control-label"></label>
+                <input asp-for="MovieList.Plot" class="form-control" />
+                <span asp-validation-for="MovieList.Plot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="MovieList.Genre" class="control-label"></label>
                 <input asp-for="MovieList.Genre" class="form-control" />
                 <span asp-validation-for="MovieList.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovieList.VideoUrl" class="control-label"></label>
+                <input asp-for="MovieList.VideoUrl" class="form-control" />
+                <span asp-validation-for="MovieList.VideoUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MovieList.Director" class="control-label"></label>

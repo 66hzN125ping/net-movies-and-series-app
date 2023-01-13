@@ -1,5 +1,5 @@
 ﻿@page
-@model Aspnet_Core_Movie.Pages.DeleteModel
+@model Aspnet_Core_Movie.Controllers.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -20,16 +20,34 @@
             @Html.DisplayFor(model => model.MovieList.Title)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieList.ImgUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieList.ImgUrl)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MovieList.Rating)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MovieList.Rating)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieList.Plot)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieList.Plot)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MovieList.Genre)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MovieList.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MovieList.VideoUrl)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MovieList.VideoUrl)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.MovieList.Director)

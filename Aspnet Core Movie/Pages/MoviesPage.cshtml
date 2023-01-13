@@ -2,15 +2,12 @@
 @model Aspnet_Core_Movie.Controllers.IndexModel
 
 @{
-    ViewData["Title"] = "AdminPanel";
+    ViewData["Title"] = "MoviesPage";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>AdminPanel</h1>
+<h1>Movies</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -63,9 +60,7 @@
                 @Html.DisplayFor(modelItem => item.Director)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
             </td>
         </tr>
 }

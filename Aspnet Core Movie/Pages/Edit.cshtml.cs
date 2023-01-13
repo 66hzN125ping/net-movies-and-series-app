@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Models;
 
-namespace Aspnet_Core_Movie.Pages
+namespace Aspnet_Core_Movie.Controllers
 {
     public class EditModel : PageModel
     {

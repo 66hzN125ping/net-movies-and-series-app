@@ -16,7 +16,6 @@ namespace Aspnet_Core_Movie.Controllers
             this.context = context;
         }
 
-        //GET /
         public async Task<ActionResult> Index()
         {
             IQueryable<MovieList> items = from i in context.MovieList orderby i.Id select i;

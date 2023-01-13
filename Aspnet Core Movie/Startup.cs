@@ -28,11 +28,19 @@ namespace Aspnet_Core_Movie
 
             services.AddDbContext<MovieContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
 
+            services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizePage("/MoviesPage");
+                options.Conventions.AuthorizePage("/AdminPanel");
+            });
+
+
             services.ConfigureApplicationCookie(config =>
             {
                 config.LoginPath = "/Login";
             });
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -54,6 +62,7 @@ namespace Aspnet_Core_Movie
             app.UseRouting();
 
             app.UseAuthentication();
+
 
             app.UseAuthorization();
 
