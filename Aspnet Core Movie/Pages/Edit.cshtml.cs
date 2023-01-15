@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Models;
 using Microsoft.AspNetCore.Authorization;
+using Aspnet_Core_Movie.Model;
 
 namespace Aspnet_Core_Movie.Controllers
 {
     [Authorize(Roles = "admin")]
     public class EditModel : PageModel
     {
-        private readonly Aspnet_Core_Movie.Infrastructure.MovieContext _context;
+        private readonly MovieContext _context;
 
-        public EditModel(Aspnet_Core_Movie.Infrastructure.MovieContext context)
+        public EditModel(MovieContext context)
         {
             _context = context;
         }

@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Models;
 using Microsoft.AspNetCore.Authorization;
+using Aspnet_Core_Movie.Model;
 
 namespace Aspnet_Core_Movie.Controllers
 {

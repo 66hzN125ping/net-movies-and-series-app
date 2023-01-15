@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Models;
 using Microsoft.AspNetCore.Authorization;
+using Aspnet_Core_Movie.Model;
 
 namespace Aspnet_Core_Movie.Controllers
 {
@@ -15,9 +15,9 @@ namespace Aspnet_Core_Movie.Controllers
     public class CreateModel : PageModel
     {
         
-        private readonly Aspnet_Core_Movie.Infrastructure.MovieContext _context;
+        private readonly MovieContext _context;
 
-        public CreateModel(Aspnet_Core_Movie.Infrastructure.MovieContext context)
+        public CreateModel(MovieContext context)
         {
             _context = context;
         }

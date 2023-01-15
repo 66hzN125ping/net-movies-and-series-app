@@ -1,4 +1,3 @@
-using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

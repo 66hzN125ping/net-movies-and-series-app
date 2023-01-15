@@ -1,7 +1,7 @@
 ﻿using Aspnet_Core_Movie.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Aspnet_Core_Movie.Infrastructure
+namespace Aspnet_Core_Movie.Model
 
 {
     public class MovieContext : DbContext

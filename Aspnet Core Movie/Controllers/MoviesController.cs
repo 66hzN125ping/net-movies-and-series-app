@@ -1,4 +1,4 @@
-﻿using Aspnet_Core_Movie.Infrastructure;
+﻿using Aspnet_Core_Movie.Model;
 using Aspnet_Core_Movie.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
