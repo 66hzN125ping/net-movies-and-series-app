@@ -1,0 +1,81 @@
+﻿@page
+@using Aspnet_Core_Movie.Controllers;
+@model Aspnet_Core_Movie.Controllers.EditModel1
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SerieList</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SerieList.Id" />
+            <div class="form-group">
+                <label asp-for="SerieList.Title" class="control-label"></label>
+                <input asp-for="SerieList.Title" class="form-control" />
+                <span asp-validation-for="SerieList.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.ImgUrl" class="control-label"></label>
+                <input asp-for="SerieList.ImgUrl" class="form-control" />
+                <span asp-validation-for="SerieList.ImgUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Rating" class="control-label"></label>
+                <input asp-for="SerieList.Rating" class="form-control" />
+                <span asp-validation-for="SerieList.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.DurationPerEpisode" class="control-label"></label>
+                <input asp-for="SerieList.DurationPerEpisode" class="form-control" />
+                <span asp-validation-for="SerieList.DurationPerEpisode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Episodes" class="control-label"></label>
+                <input asp-for="SerieList.Episodes" class="form-control" />
+                <span asp-validation-for="SerieList.Episodes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Seasons" class="control-label"></label>
+                <input asp-for="SerieList.Seasons" class="form-control" />
+                <span asp-validation-for="SerieList.Seasons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Plot" class="control-label"></label>
+                <input asp-for="SerieList.Plot" class="form-control" />
+                <span asp-validation-for="SerieList.Plot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Genre" class="control-label"></label>
+                <input asp-for="SerieList.Genre" class="form-control" />
+                <span asp-validation-for="SerieList.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.VideoUrl" class="control-label"></label>
+                <input asp-for="SerieList.VideoUrl" class="form-control" />
+                <span asp-validation-for="SerieList.VideoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieList.Director" class="control-label"></label>
+                <input asp-for="SerieList.Director" class="form-control" />
+                <span asp-validation-for="SerieList.Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

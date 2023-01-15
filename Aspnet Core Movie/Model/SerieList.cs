@@ -2,7 +2,7 @@
 
 namespace Aspnet_Core_Movie.Models
 {
-    public class MovieList
+    public class SerieList
     {
         public int Id { get; set; }
         [Required]
@@ -12,15 +12,19 @@ namespace Aspnet_Core_Movie.Models
         [Required]
         public float Rating { get; set; }
         [Required]
-        public string Plot { get; set; }
+        public float DurationPerEpisode { get; set; }
         [Required]
-        public float Duration { get; set; }
+        public int Episodes { get; set; }
+        [Required]
+        public int Seasons { get; set; }
+        [Required]
+        public string Plot { get; set; }
         [Required]
         public string Genre { get; set; }
         [Required]
         public string VideoUrl { get; set; }
         [Required]
         public string Director { get; set; }
-        
+
     }
 }

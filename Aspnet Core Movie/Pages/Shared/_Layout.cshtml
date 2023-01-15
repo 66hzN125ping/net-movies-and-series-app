@@ -46,7 +46,10 @@
                         {
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-page="/MoviesPage">Movies</a>
+                                <a class="nav-link" asp-area="" asp-page="/Movies/MoviesPage">Movies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-page="/Series/SeriesPage">Series</a>
                             </li>
                             @if (User.IsInRole("admin")) {
                                 <li class="nav-item">

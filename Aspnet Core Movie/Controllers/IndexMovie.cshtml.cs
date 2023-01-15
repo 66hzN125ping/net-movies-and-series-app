@@ -24,6 +24,8 @@ namespace Aspnet_Core_Movie.Controllers
         public async Task OnGetAsync()
         {
             MovieList = await _context.MovieList.ToListAsync();
+
         }
+
     }
 }

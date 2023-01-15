@@ -1,0 +1,112 @@
+﻿@page
+@using Aspnet_Core_Movie.Controllers;
+@model Aspnet_Core_Movie.Controllers.IndexModel1
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Series</h1>
+
+<div>
+    Search specific Movie <input id="search" />
+    <button onclick="search()">search</button>
+</div>
+
+@section scripts
+    {
+    <script>
+        function search() {
+            $("tr").each(function (index, value) {
+                if (index > 0 && !$(this).find("td")[0].innerText.includes($("#search").val())) {
+                    $(this).attr("hidden", true);
+                } else {
+                    $(this).removeAttr("hidden");
+                }
+                console.log(value);
+            })
+        }
+    </script>
+}
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].ImgUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].DurationPerEpisode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Episodes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Seasons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Plot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].VideoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerieList[0].Director)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SerieList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImgUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationPerEpisode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Episodes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seasons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VideoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Director)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

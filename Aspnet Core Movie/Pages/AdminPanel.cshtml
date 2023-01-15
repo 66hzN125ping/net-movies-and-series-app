@@ -1,5 +1,5 @@
 ﻿@page
-@model Aspnet_Core_Movie.Controllers.IndexModel
+@model Controllers.IndexModel
 
 @{
     ViewData["Title"] = "AdminPanel";
@@ -11,8 +11,12 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<div>
+    <h2>Movies</h2>
+    <table class="table">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.MovieList[0].Title)
@@ -37,9 +41,14 @@
             </th>
             <th></th>
         </tr>
-    </thead>
+    </table>
+</div>
+
+
     <tbody>
+    <table class="table">
 @foreach (var item in Model.MovieList) {
+
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
@@ -73,4 +82,4 @@
         </tr>
 }
     </tbody>
-</table>
+    </table>

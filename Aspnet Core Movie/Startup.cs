@@ -1,3 +1,4 @@
+using Aspnet_Core_Movie.Infrastructure;
 using Aspnet_Core_Movie.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,6 +27,7 @@ namespace Aspnet_Core_Movie
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthDbContext>();
 
             services.AddDbContext<MovieContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
+            services.AddDbContext<SerieContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SerieContext")));
 
             services.AddRazorPages(options =>
             {
