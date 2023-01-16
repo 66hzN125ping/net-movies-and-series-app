@@ -1,6 +1,6 @@
 ﻿@page
+@using Aspnet_Core_Movie.Controllers;
 @model Controllers.IndexModel
-
 @{
     ViewData["Title"] = "AdminPanel";
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -8,9 +8,6 @@
 
 <h1>AdminPanel</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -48,7 +45,6 @@
     <tbody>
     <table class="table">
 @foreach (var item in Model.MovieList) {
-
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)

@@ -8,9 +8,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Aspnet_Core_Movie.Models;
 using Aspnet_Core_Movie.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Aspnet_Core_Movie.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class EditModel1 : PageModel
     {
         private readonly SerieContext _context;

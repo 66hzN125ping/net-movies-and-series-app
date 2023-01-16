@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Aspnet_Core_Movie.Models;
 using Aspnet_Core_Movie.Infrastructure;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Aspnet_Core_Movie.Controllers
 {
+    [Authorize]
     public class DetailsModel1 : PageModel
     {
         private readonly SerieContext _context;

@@ -9,7 +9,8 @@
 <h1>Series</h1>
 
 <div>
-    Search specific Movie <input id="search" />
+    <label> Search specific Series: </label>
+    <input id="search" />
     <button onclick="search()">search</button>
 </div>
 
@@ -28,10 +29,12 @@
         }
     </script>
 }
-
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+@if (User.IsInRole("admin"))
+{
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+}
 <table class="table">
     <thead>
         <tr>
@@ -102,9 +105,15 @@
                 @Html.DisplayFor(modelItem => item.Director)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                    }
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    }
             </td>
         </tr>
 }

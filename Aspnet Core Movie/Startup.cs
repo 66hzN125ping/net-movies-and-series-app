@@ -31,7 +31,8 @@ namespace Aspnet_Core_Movie
 
             services.AddRazorPages(options =>
             {
-                options.Conventions.AuthorizePage("/MoviesPage");
+                options.Conventions.AuthorizePage("/Movies/MoviesPage");
+                options.Conventions.AuthorizePage("/Series/SeriesPage");
                 options.Conventions.AuthorizePage("/AdminPanel");
             });
 
