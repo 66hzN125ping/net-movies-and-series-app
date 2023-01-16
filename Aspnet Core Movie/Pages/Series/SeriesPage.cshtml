@@ -3,13 +3,13 @@
 @model Aspnet_Core_Movie.Controllers.IndexModel1
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SeriesPage";
 }
 
 <h1>Series</h1>
 
 <div>
-    <label> Search specific Series: </label>
+    <label> Search specific Series : </label>
     <input id="search" />
     <button onclick="search()">search</button>
 </div>
@@ -45,10 +45,10 @@
                 @Html.DisplayNameFor(model => model.SerieList[0].ImgUrl)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SerieList[0].Rating)
+                @Html.DisplayNameFor(model => model.SerieList[0].Rating)<p>/10</p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SerieList[0].DurationPerEpisode)
+                @Html.DisplayNameFor(model => model.SerieList[0].DurationPerEpisode)<p>minutes</p>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.SerieList[0].Episodes)
@@ -77,9 +77,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImgUrl)
-            </td>
+                <td>
+                    <img src="@Url.Content(item.ImgUrl)" alt="" style="width:70px;height:100px">
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
@@ -98,9 +98,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Genre)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VideoUrl)
-            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoUrl)
+                    <iframe width="420" height="315"
+                        src="@Url.Content(item.VideoUrl)">
+                    </iframe>
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Director)
             </td>
